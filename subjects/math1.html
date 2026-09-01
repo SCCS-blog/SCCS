@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SCCS — Math 1">
+  <title>Math 1 — SCCS</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .subject-hero{padding:48px 0 28px}
+    .subject-hero .back{color:var(--accent);font-size:12px;font-weight:700}
+    .subject-hero h1{font-size:clamp(42px,6vw,72px);margin:18px 0 4px;letter-spacing:-2px}
+    .subject-hero h2{color:var(--accent);font-size:20px;margin:0 0 12px}
+    .subject-hero p{color:var(--muted);max-width:720px}
+    .subject-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}
+    .subject-tab{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:10px 14px;font-size:12px;color:#b9c5d2}
+    .subject-layout{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .material-box{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:22px}
+    .material-box h3{margin:0 0 8px}
+    .material-box p{font-size:12px;color:var(--muted);margin:0 0 16px}
+    .material-list{list-style:none;padding:0;margin:0}
+    .material-list li{border-top:1px solid var(--line);padding:13px 0;display:flex;justify-content:space-between;gap:12px;font-size:12px;color:#c5d0dc}
+    .material-list span{color:#5f7084;font-size:10px}
+    .notice{margin-top:16px;border:1px dashed #23435b;background:#071522;border-radius:14px;padding:16px;color:#8192a4;font-size:11px}
+    @media(max-width:700px){.subject-layout{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="orb orb-one"></div>
+  <div class="orb orb-two"></div>
+  <header class="navbar">
+    <a class="brand" href="../index.html" aria-label="SCCS Home">
+      <div class="brand-mark">S</div>
+      <div><strong>SCCS</strong><span>Suez Canal Cyber Security</span></div>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../index.html#home">Home</a>
+      <a class="active" href="../index.html#subjects">Subjects</a>
+      <a href="../index.html#labs">Practical Labs</a>
+      <a href="../index.html#resources">Resources</a>
+      <a href="../index.html#about">About</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">☾</button>
+      <a class="quick-btn" href="../index.html#resources">Quick Links <span>⌄</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main class="content-section">
+    <section class="subject-hero">
+      <a class="back" href="../index.html#subjects">← Back to Subjects</a>
+      <h1>Math 1</h1>
+      <h2>Calculus & Functions</h2>
+      <p>Mathematics foundation for the Cyber Security track.</p>
+      <div class="subject-tabs">
+        <a class="subject-tab" href="#lectures">Lectures</a>
+        <a class="subject-tab" href="#practical">Practical</a>
+        <a class="subject-tab" href="#summaries">Summaries</a>
+        <a class="subject-tab" href="#resources">Resources</a>
+      </div>
+    </section>
+
+    <section class="subject-layout">
+      <article class="material-box" id="lectures">
+        <h3>📚 Lectures</h3>
+        <p>Organized lecture material will be placed here.</p>
+        <ul class="material-list">
+          <li>Lecture 01 <span>PDF / Notes</span></li>
+          <li>Lecture 02 <span>PDF / Notes</span></li>
+          <li>Lecture 03 <span>PDF / Notes</span></li>
+        </ul>
+      </article>
+
+      <article class="material-box" id="practical">
+        <h3>🧪 Practical</h3>
+        <p>Hands-on material, lab sheets and exercises.</p>
+        <ul class="material-list">
+          <li>Lab 01 <span>Lab Sheet</span></li>
+          <li>Lab 02 <span>Lab Sheet</span></li>
+          <li>Lab 03 <span>Lab Sheet</span></li>
+        </ul>
+      </article>
+
+      <article class="material-box" id="summaries">
+        <h3>📝 Summaries</h3>
+        <p>Short revision notes and student-friendly explanations.</p>
+        <ul class="material-list">
+          <li>Chapter 01 <span>Summary</span></li>
+          <li>Chapter 02 <span>Summary</span></li>
+          <li>Cheat Sheet <span>Revision</span></li>
+        </ul>
+      </article>
+
+      <article class="material-box" id="resources">
+        <h3>🔗 Resources</h3>
+        <p>Useful references related to this subject.</p>
+        <ul class="material-list">
+          <li>Course References <span>Links</span></li>
+          <li>Practice Material <span>Links</span></li>
+          <li>Recommended Resources <span>Links</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <div class="notice">
+      This is the initial structure. We will replace these placeholders with the actual lectures, practical files, summaries and resources from your department.
+    </div>
+  </main>
+
+  <footer>
+    <div><strong>SCCS</strong><span>Suez Canal Cyber Security</span></div>
+    <p>Built to make learning easier.</p>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SCCS — Linux">
+  <title>Linux — SCCS</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .subject-hero{padding:48px 0 28px}
+    .subject-hero .back{color:var(--accent);font-size:12px;font-weight:700}
+    .subject-hero h1{font-size:clamp(42px,6vw,72px);margin:18px 0 4px;letter-spacing:-2px}
+    .subject-hero h2{color:var(--accent);font-size:20px;margin:0 0 12px}
+    .subject-hero p{color:var(--muted);max-width:720px}
+    .subject-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}
+    .subject-tab{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:10px 14px;font-size:12px;color:#b9c5d2}
+    .subject-layout{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .material-box{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:22px}
+    .material-box h3{margin:0 0 8px}
+    .material-box p{font-size:12px;color:var(--muted);margin:0 0 16px}
+    .material-list{list-style:none;padding:0;margin:0}
+    .material-list li{border-top:1px solid var(--line);padding:13px 0;display:flex;justify-content:space-between;gap:12px;font-size:12px;color:#c5d0dc}
+    .material-list span{color:#5f7084;font-size:10px}
+    .notice{margin-top:16px;border:1px dashed #23435b;background:#071522;border-radius:14px;padding:16px;color:#8192a4;font-size:11px}
+    @media(max-width:700px){.subject-layout{grid-template-columns:1fr}}
+  </style>
+
+    .linux-section{margin-top:34px;scroll-margin-top:100px}
+    .sheet-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .sheet-card{border:1px solid var(--line);background:var(--panel);border-radius:16px;overflow:hidden}
+    .sheet-image-wrap{background:#03070c;padding:10px;border-bottom:1px solid var(--line)}
+    .sheet-image-wrap img{display:block;width:100%;height:390px;object-fit:contain;object-position:top;background:#03070c;border-radius:9px}
+    .sheet-info{padding:18px}
+    .sheet-info h3{margin:0 0 7px;font-size:16px}
+    .sheet-info p{margin:0 0 13px;font-size:11px;color:var(--muted);line-height:1.7}
+    .sheet-link{color:var(--accent);font-size:11px;font-weight:700;text-decoration:none}
+    .sheet-link:hover{text-decoration:underline}
+    .notes-card{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:20px}
+    .notes-card p{margin:0 0 14px;color:var(--muted);font-size:12px}
+    .empty-state{border:1px dashed #23435b;border-radius:12px;padding:18px;color:#708398;font-size:11px;background:#07121e}
+    @media(max-width:800px){.sheet-grid{grid-template-columns:1fr}.sheet-image-wrap img{height:340px}}
+
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="orb orb-one"></div>
+  <div class="orb orb-two"></div>
+  <header class="navbar">
+    <a class="brand" href="../index.html" aria-label="SCCS Home">
+      <div class="brand-mark">S</div>
+      <div><strong>SCCS</strong><span>Suez Canal Cyber Security</span></div>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../index.html#home">Home</a>
+      <a class="active" href="../index.html#subjects">Subjects</a>
+      <a href="../index.html#labs">Practical Labs</a>
+      <a href="../index.html#resources">Resources</a>
+      <a href="../index.html#about">About</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">☾</button>
+      <a class="quick-btn" href="../index.html#resources">Quick Links <span>⌄</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main class="content-section">
+    <section class="subject-hero">
+      <a class="back" href="../index.html#subjects">← Back to Subjects</a>
+      <h1>Linux</h1>
+      <h2>Commands &amp; Shell</h2>
+      <p>Reference material, practical notes and quick-reference sheets for Linux and security-related command-line work.</p>
+      <div class="subject-tabs">
+        <a class="subject-tab" href="#quick-reference">Quick Reference</a>
+        <a class="subject-tab" href="#notes">Notes</a>
+        <a class="subject-tab" href="#files">Files</a>
+      </div>
+    </section>
+
+    <section class="linux-section" id="quick-reference">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">QUICK REFERENCE</span>
+          <h2>Cheat Sheets</h2>
+        </div>
+      </div>
+
+      <div class="sheet-grid">
+        <article class="sheet-card">
+          <div class="sheet-image-wrap">
+            <img src="../assets/linux/linux-commands-cheat-sheet.png" alt="Linux Commands Cheat Sheet">
+          </div>
+          <div class="sheet-info">
+            <h3>Linux Commands Cheat Sheet</h3>
+            <p>Navigation, files, permissions, users, processes, networking, packages, archives and other command-line references.</p>
+            <a class="sheet-link" href="../assets/linux/linux-commands-cheat-sheet.png" target="_blank" rel="noopener">Open full sheet →</a>
+          </div>
+        </article>
+
+        <article class="sheet-card">
+          <div class="sheet-image-wrap">
+            <img src="../assets/linux/nmap-cheat-sheet.png" alt="Nmap Cheat Sheet">
+          </div>
+          <div class="sheet-info">
+            <h3>Nmap Cheat Sheet</h3>
+            <p>Quick reference for Nmap scanning options, scan types, service detection, output and result interpretation.</p>
+            <a class="sheet-link" href="../assets/linux/nmap-cheat-sheet.png" target="_blank" rel="noopener">Open full sheet →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="linux-section" id="notes">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">NOTES</span>
+          <h2>Interesting Notes</h2>
+        </div>
+      </div>
+
+      <article class="notes-card">
+        <p>A personal command/reference note containing listening, interactive-shell, security-tool and network-testing notes.</p>
+        <a class="sheet-link" href="../assets/linux/interesting-notes.md" target="_blank" rel="noopener">Open notes file →</a>
+      </article>
+    </section>
+
+    <section class="linux-section" id="files">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">FILES</span>
+          <h2>Course Material</h2>
+        </div>
+      </div>
+      <div class="empty-state">More Linux lectures, PDFs and practical files can be added here as you collect them.</div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>SCCS</strong><span>Suez Canal Cyber Security</span></div>
+    <p>Built to make learning easier.</p>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>
