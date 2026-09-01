@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SCCS — Suez Canal Cyber Security Student Hub">
+  <title>SCCS — Suez Canal Cyber Security</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="orb orb-one"></div>
+  <div class="orb orb-two"></div>
+
+  <header class="navbar">
+    <a class="brand" href="#home" aria-label="SCCS Home">
+      <div class="brand-mark">S</div>
+      <div>
+        <strong>SCCS</strong>
+        <span>Suez Canal Cyber Security</span>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a class="active" href="#home">Home</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#labs">Practical Labs</a>
+      <a href="#resources">Resources</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">☾</button>
+      <button class="icon-btn" id="searchBtn" title="Search" aria-label="Search">⌕</button>
+      <a class="quick-btn" href="#resources">Quick Links <span>⌄</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> Welcome to SCCS</div>
+        <h1>SCCS</h1>
+        <h2>Suez Canal Cyber Security</h2>
+        <p>Your academic companion in the world of Cyber Security. Find lectures, labs, summaries and useful resources — all in one place.</p>
+        <div class="hero-buttons">
+          <a class="primary-btn" href="#subjects">Explore Subjects <span>→</span></a>
+          <a class="secondary-btn" href="#resources">Browse Resources <span>▱</span></a>
+        </div>
+        <div class="hero-meta">
+          <span>Student-built</span>
+          <i></i>
+          <span>Academic Hub</span>
+          <i></i>
+          <span>Free &amp; Open</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="code-rain">01010101<br>10110010<br>00101101<br>11001010<br>01100101</div>
+        <div class="circuit c1"></div>
+        <div class="circuit c2"></div>
+        <div class="shield-wrap">
+          <div class="shield"><span class="lock">▣</span></div>
+          <div class="pulse"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="subjects" class="content-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">LEARN</span>
+          <h2>Subjects</h2>
+        </div>
+        <button class="outline-btn" id="allSubjectsBtn">View All Subjects →</button>
+      </div>
+
+      <div class="subjects-grid">
+        <article class="subject-card" data-subject="Math 1">
+          <div class="subject-icon math">π</div>
+          <h3>Math 1</h3>
+          <p>Calculus &amp; Functions</p>
+          <small>Lectures • Labs • Summaries</small>
+          <a href="#resources">Open <span>→</span></a>
+        </article>
+
+        <article class="subject-card" data-subject="Math 2">
+          <div class="subject-icon math2">Σ</div>
+          <h3>Math 2</h3>
+          <p>Linear Algebra</p>
+          <small>Lectures • Labs • Summaries</small>
+          <a href="#resources">Open <span>→</span></a>
+        </article>
+
+        <article class="subject-card" data-subject="Data Communication">
+          <div class="subject-icon network">⌘</div>
+          <h3>Data Communication</h3>
+          <p>Networks &amp; Protocols</p>
+          <small>Lectures • Labs • Summaries</small>
+          <a href="#labs">Open <span>→</span></a>
+        </article>
+
+        <article class="subject-card" data-subject="Programming">
+          <div class="subject-icon code">&lt;/&gt;</div>
+          <h3>Programming</h3>
+          <p>C / Python Basics</p>
+          <small>Lectures • Labs • Exercises</small>
+          <a href="#resources">Open <span>→</span></a>
+        </article>
+
+        <article class="subject-card" data-subject="Linux">
+          <div class="subject-icon linux">&gt;_</div>
+          <h3>Linux</h3>
+          <p>Commands &amp; Shell</p>
+          <small>Lectures • Labs • Cheat Sheets</small>
+          <a href="#labs">Open <span>→</span></a>
+        </article>
+
+        <article class="subject-card" data-subject="Cyber Security">
+          <div class="subject-icon cyber">◈</div>
+          <h3>Cyber Security</h3>
+          <p>Security Fundamentals</p>
+          <small>Lectures • Labs • Resources</small>
+          <a href="#roadmap">Open <span>→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section id="labs" class="content-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">PRACTICE</span>
+          <h2>Practical Labs</h2>
+        </div>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-icon">⌁</span>
+          <div><h3>Networking Labs</h3><p>Hands-on exercises for protocols, addressing and network fundamentals.</p></div>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon">$_</span>
+          <div><h3>Linux Labs</h3><p>Command-line practice, permissions, processes and everyday Linux skills.</p></div>
+        </article>
+        <article class="feature-card">
+          <span class="feature-icon">&lt;/&gt;</span>
+          <div><h3>Programming Labs</h3><p>Exercises and small projects to build a solid programming foundation.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="resources" class="content-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">LIBRARY</span>
+          <h2>Resources</h2>
+        </div>
+      </div>
+      <div class="resource-panel">
+        <div class="resource-item"><span>▤</span><div><h3>Lecture Notes</h3><p>Organized course material and summaries.</p></div><b>→</b></div>
+        <div class="resource-item"><span>□</span><div><h3>PDF Library</h3><p>Course PDFs, references and useful documents.</p></div><b>→</b></div>
+        <div class="resource-item"><span>?</span><div><h3>Questions &amp; Exams</h3><p>Practice questions and previous exam material.</p></div><b>→</b></div>
+        <div class="resource-item"><span>↗</span><div><h3>Useful Links</h3><p>External learning platforms and references.</p></div><b>→</b></div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="content-section">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">DIRECTION</span>
+          <h2>Cyber Security Roadmap</h2>
+        </div>
+      </div>
+      <div class="roadmap">
+        <div class="road-step"><span>01</span><div><h3>Foundations</h3><p>Networking • Linux • Programming • Core IT</p></div></div>
+        <div class="road-step"><span>02</span><div><h3>Security Fundamentals</h3><p>Threats • Vulnerabilities • Security concepts</p></div></div>
+        <div class="road-step"><span>03</span><div><h3>Hands-on Practice</h3><p>Labs • CTFs • TryHackMe • Practical skills</p></div></div>
+        <div class="road-step"><span>04</span><div><h3>Choose Your Path</h3><p>SOC • Pentesting • DFIR • AppSec • Cloud Security</p></div></div>
+      </div>
+    </section>
+
+    <section id="about" class="content-section about-section">
+      <div>
+        <span class="section-kicker">ABOUT</span>
+        <h2>Built for students, by students.</h2>
+        <p>SCCS is a free academic hub designed to organize the learning material of the Cyber Security track at Suez Canal University and make it easier for current and future students to find what they need.</p>
+      </div>
+      <div class="stats">
+        <div><strong>100+</strong><span>Lectures</span></div>
+        <div><strong>50+</strong><span>Practical Labs</span></div>
+        <div><strong>200+</strong><span>Resources</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>SCCS</strong><span>Suez Canal Cyber Security</span></div>
+    <p>Built to make learning easier.</p>
+  </footer>
+
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <button id="closeSearch">×</button>
+      <h2>Search SCCS</h2>
+      <input id="searchInput" type="search" placeholder="Search subjects, labs, resources..." autofocus>
+      <div id="searchResults"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
