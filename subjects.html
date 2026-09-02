@@ -1,1 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+          content="SCCS — Suez Canal Cyber Security Student Hub">
+
+    <title>Subjects — SCCS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .subjects-page {
+            min-height: 100vh;
+            padding: 120px 6% 70px;
+        }
+
+        .subjects-header {
+            max-width: 900px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .subjects-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 12px;
+        }
+
+        .subjects-header p {
+            opacity: 0.75;
+            line-height: 1.7;
+        }
+
+        .section-title {
+            max-width: 1100px;
+            margin: 0 auto 22px;
+        }
+
+        .section-title h2 {
+            margin-bottom: 6px;
+        }
+
+        .section-title p {
+            opacity: 0.65;
+        }
+
+        .year-grid,
+        .semester-grid,
+        .subject-grid,
+        .category-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .selection-card {
+            display: block;
+            padding: 28px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: inherit;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: 0.25s ease;
+            cursor: pointer;
+        }
+
+        .selection-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 200, 255, 0.45);
+            background: rgba(255,255,255,0.07);
+        }
+
+        .selection-card .number {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .selection-card h3 {
+            margin: 0 0 8px;
+        }
+
+        .selection-card p {
+            margin: 0;
+            opacity: 0.65;
+            line-height: 1.5;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 0 auto 35px;
+            padding: 10px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.04);
+        }
+
+        .pdf-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 9px 14px;
+            border-radius: 10px;
+            background: rgba(0, 200, 255, 0.1);
+            border: 1px solid rgba(0, 200, 255, 0.2);
+        }
+
+        .empty-state {
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 35px;
+            text-align: center;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+
+    <header class="navbar">
+
+        <a class="brand" href="index.html" aria-label="SCCS Home">
+            <div class="brand-mark">S</div>
+            <div>
+                <strong>SCCS</strong>
+                <span>Suez Canal Cyber Security</span>
+            </div>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a class="active" href="subjects.html">Subjects</a>
+            <a href="index.html#labs">Practical Labs</a>
+            <a href="resources.html">Resources</a>
+            <a href="index.html#about">About</a>
+        </nav>
+
+    </header>
+
+
+    <main class="subjects-page">
+
+        <div class="subjects-header">
+            <h1>Subjects</h1>
+            <p>
+                Explore academic materials by academic year,
+                semester, subject, and content type.
+            </p>
+        </div>
+
+
+        <!-- YEARS -->
+
+        <section id="yearsSection">
+
+            <div class="section-title">
+                <h2>Choose Your Year</h2>
+                <p>Select your academic year.</p>
+            </div>
+
+            <div class="year-grid">
+
+                <div class="selection-card" onclick="selectYear(1)">
+                    <div class="number">01</div>
+                    <h3>Year 1</h3>
+                    <p>First academic year</p>
+                </div>
+
+                <div class="selection-card" onclick="selectYear(2)">
+                    <div class="number">02</div>
+                    <h3>Year 2</h3>
+                    <p>Second academic year</p>
+                </div>
+
+                <div class="selection-card" onclick="selectYear(3)">
+                    <div class="number">03</div>
+                    <h3>Year 3</h3>
+                    <p>Third academic year</p>
+                </div>
+
+                <div class="selection-card" onclick="selectYear(4)">
+                    <div class="number">04</div>
+                    <h3>Year 4</h3>
+                    <p>Fourth academic year</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEMESTERS -->
+
+        <section id="semestersSection" class="hidden">
+
+            <a href="#" class="back-button" onclick="goBackToYears(event)">
+                ← Back to Years
+            </a>
+
+            <div class="section-title">
+                <h2 id="yearTitle">Year 1</h2>
+                <p>Choose a semester.</p>
+            </div>
+
+            <div class="semester-grid">
+
+                <div class="selection-card" onclick="selectSemester(1)">
+                    <div class="number">01</div>
+                    <h3>Semester 1</h3>
+                    <p>First semester</p>
+                </div>
+
+                <div class="selection-card" onclick="selectSemester(2)">
+                    <div class="number">02</div>
+                    <h3>Semester 2</h3>
+                    <p>Second semester</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUBJECTS -->
+
+        <section id="subjectsSection" class="hidden">
+
+            <a href="#" class="back-button" onclick="goBackToSemesters(event)">
+                ← Back to Semesters
+            </a>
+
+            <div class="section-title">
+                <h2 id="semesterTitle">Semester 2</h2>
+                <p>Select a subject.</p>
+            </div>
+
+            <div id="subjectGrid" class="subject-grid"></div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+
+        <section id="categoriesSection" class="hidden">
+
+            <a href="#" class="back-button" onclick="goBackToSubjects(event)">
+                ← Back to Subjects
+            </a>
+
+            <div class="section-title">
+                <h2 id="subjectTitle">Math 2</h2>
+                <p>Choose the type of material you want.</p>
+            </div>
+
+            <div id="categoryGrid" class="category-grid"></div>
+
+        </section>
+
+
+        <!-- PDFS -->
+
+        <section id="pdfSection" class="hidden">
+
+            <a href="#" class="back-button" onclick="goBackToCategories(event)">
+                ← Back to Categories
+            </a>
+
+            <div class="section-title">
+                <h2 id="categoryTitle">Solved Problems</h2>
+                <p>Available study material.</p>
+            </div>
+
+            <div id="pdfGrid" class="category-grid"></div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        let selectedYear = null;
+        let selectedSemester = null;
+        let selectedSubject = null;
+        let selectedCategory = null;
+
+
+        /*
+         * SUBJECT DATA
+         *
+         * Add new subjects here later.
+         */
+
+        const subjectsData = {
+
+            1: {
+
+                1: [
+                    {
+                        name: "Programming 1",
+                        description: "Programming 1 study materials."
+                    }
+                ],
+
+                2: [
+                    {
+                        name: "Programming 2",
+                        description: "Programming 2 study materials."
+                    },
+
+                    {
+                        name: "Math 2",
+                        description: "Linear algebra and mathematics study materials.",
+                        categories: {
+
+                            "Solved Problems": [
+                                {
+                                    title: "Solved Problems — Full Steps",
+                                    file: "subjects/Year 1/Semester 2/Math 2/Solved Problems/4 - حل مسائل كاملة بالخطوات_compressed.pdf"
+                                }
+                            ],
+
+                            "Simplified Explanations & Rules": [
+                                {
+                                    title: "Simplified Explanations & Rules",
+                                    file: "subjects/Year 1/Semester 2/Math 2/Simplified Explanations & Rules/1 - شرح مبسط وقواعد_compressed.pdf"
+                                }
+                            ],
+
+                            "Examples & Practice": [
+                                {
+                                    title: "Examples & Practice",
+                                    file: "subjects/Year 1/Semester 2/Math 2/Examples & Practice/2 - أمثلة توضيحية وتدريبات تمييز_compressed.pdf"
+                                }
+                            ],
+
+                            "Foundations & Preparation": [
+                                {
+                                    title: "Foundations & Preparation",
+                                    file: "subjects/Year 1/Semester 2/Math 2/Foundations & Preparation/3 - تأسيس وتمهيد للحل_compressed.pdf"
+                                }
+                            ]
+
+                        }
+                    }
+                ]
+
+            },
+
+            2: {
+                1: [],
+                2: []
+            },
+
+            3: {
+                1: [],
+                2: []
+            },
+
+            4: {
+                1: [],
+                2: []
+            }
+
+        };
+
+
+        function hideAll() {
+
+            document
+                .getElementById("yearsSection")
+                .classList.add("hidden");
+
+            document
+                .getElementById("semestersSection")
+                .classList.add("hidden");
+
+            document
+                .getElementById("subjectsSection")
+                .classList.add("hidden");
+
+            document
+                .getElementById("categoriesSection")
+                .classList.add("hidden");
+
+            document
+                .getElementById("pdfSection")
+                .classList.add("hidden");
+
+        }
+
+
+        function selectYear(year) {
+
+            selectedYear = year;
+
+            hideAll();
+
+            document
+                .getElementById("semestersSection")
+                .classList.remove("hidden");
+
+            document
+                .getElementById("yearTitle")
+                .textContent = "Year " + year;
+
+        }
+
+
+        function selectSemester(semester) {
+
+            selectedSemester = semester;
+
+            hideAll();
+
+            document
+                .getElementById("subjectsSection")
+                .classList.remove("hidden");
+
+            document
+                .getElementById("semesterTitle")
+                .textContent =
+                "Year " +
+                selectedYear +
+                " — Semester " +
+                semester;
+
+            renderSubjects();
+
+        }
+
+
+        function renderSubjects() {
+
+            const grid =
+                document.getElementById("subjectGrid");
+
+            grid.innerHTML = "";
+
+            const subjects =
+                subjectsData[selectedYear][selectedSemester];
+
+            if (!subjects || subjects.length === 0) {
+
+                grid.innerHTML = `
+                    <div class="empty-state">
+                        <h3>No subjects added yet</h3>
+                        <p>
+                            Study materials for this semester
+                            will be added here.
+                        </p>
+                    </div>
+                `;
+
+                return;
+            }
+
+
+            subjects.forEach(subject => {
+
+                const card =
+                    document.createElement("div");
+
+                card.className =
+                    "selection-card";
+
+                card.innerHTML = `
+                    <div class="number">📚</div>
+                    <h3>${subject.name}</h3>
+                    <p>${subject.description}</p>
+                `;
+
+                card.onclick = () => {
+
+                    selectedSubject = subject;
+
+                    if (subject.categories) {
+
+                        renderCategories();
+
+                    } else {
+
+                        alert(
+                            "Materials for " +
+                            subject.name +
+                            " have not been added yet."
+                        );
+
+                    }
+
+                };
+
+                grid.appendChild(card);
+
+            });
+
+        }
+
+
+        function renderCategories() {
+
+            hideAll();
+
+            document
+                .getElementById("categoriesSection")
+                .classList.remove("hidden");
+
+            document
+                .getElementById("subjectTitle")
+                .textContent =
+                selectedSubject.name;
+
+            const grid =
+                document.getElementById("categoryGrid");
+
+            grid.innerHTML = "";
+
+
+            Object.keys(
+                selectedSubject.categories
+            ).forEach(category => {
+
+                const card =
+                    document.createElement("div");
+
+                card.className =
+                    "selection-card";
+
+                card.innerHTML = `
+                    <div class="number">📁</div>
+                    <h3>${category}</h3>
+                    <p>
+                        ${selectedSubject.categories[category].length}
+                        material(s)
+                    </p>
+                `;
+
+                card.onclick = () => {
+
+                    selectedCategory = category;
+
+                    renderPDFs();
+
+                };
+
+                grid.appendChild(card);
+
+            });
+
+        }
+
+
+        function renderPDFs() {
+
+            hideAll();
+
+            document
+                .getElementById("pdfSection")
+                .classList.remove("hidden");
+
+            document
+                .getElementById("categoryTitle")
+                .textContent =
+                selectedCategory;
+
+            const grid =
+                document.getElementById("pdfGrid");
+
+            grid.innerHTML = "";
+
+
+            const files =
+                selectedSubject.categories[selectedCategory];
+
+
+            files.forEach(file => {
+
+                const card =
+                    document.createElement("div");
+
+                card.className =
+                    "selection-card";
+
+                card.innerHTML = `
+                    <div class="number">PDF</div>
+                    <h3>${file.title}</h3>
+                    <a
+                        class="pdf-link"
+                        href="${file.file}"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Open PDF →
+                    </a>
+                `;
+
+                grid.appendChild(card);
+
+            });
+
+        }
+
+
+        function goBackToYears(event) {
+
+            event.preventDefault();
+
+            hideAll();
+
+            document
+                .getElementById("yearsSection")
+                .classList.remove("hidden");
+
+        }
+
+
+        function goBackToSemesters(event) {
+
+            event.preventDefault();
+
+            hideAll();
+
+            document
+                .getElementById("semestersSection")
+                .classList.remove("hidden");
+
+        }
+
+
+        function goBackToSubjects(event) {
+
+            event.preventDefault();
+
+            hideAll();
+
+            document
+                .getElementById("subjectsSection")
+                .classList.remove("hidden");
+
+            renderSubjects();
+
+        }
+
+
+        function goBackToCategories(event) {
+
+            event.preventDefault();
+
+            renderCategories();
+
+        }
+
+    </script>
+
+</body>
+</html>
